@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'SimpleServiceRegistry_Example' do
+  pod 'SimpleServiceRegistry', :path => '../'
+
+  target 'SimpleServiceRegistry_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
