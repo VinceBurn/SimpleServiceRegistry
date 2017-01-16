@@ -1,0 +1,16 @@
+PODS:
+  - SimpleServiceRegistry (0.1.0)
+
+DEPENDENCIES:
+  - SimpleServiceRegistry (from `../`)
+
+EXTERNAL SOURCES:
+  SimpleServiceRegistry:
+    :path: ../
+
+SPEC CHECKSUMS:
+  SimpleServiceRegistry: 61cce4c0f6e5322f79a3b60e39433edd5c44edca
+
+PODFILE CHECKSUM: 35a7a559db2dc3a8d614ee410941a354b7a66efd
+
+COCOAPODS: 1.1.1
