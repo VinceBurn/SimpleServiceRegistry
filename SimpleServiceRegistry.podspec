@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SimpleServiceRegistry'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of SimpleServiceRegistry.'
+  s.version          = '3.0.2'
+  s.summary          = 'Simple Service Registry to facilitate Dependency Injection by removing the need for Singleton'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,25 +18,17 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+Use the Service Registry to store services instance using a type as theire key. Using a Protocol as the key to retreive an instance would be the best option.
                        DESC
 
-  s.homepage         = 'https://github.com/<GITHUB_USERNAME>/SimpleServiceRegistry'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.homepage         = 'https://github.com/VinceBurn/SimpleServiceRegistry'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Vincent Bernier' => 'vincentbernier@hotmail.com' }
-  s.source           = { :git => 'https://github.com/<GITHUB_USERNAME>/SimpleServiceRegistry.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.source           = { :git => 'https://github.com/VinceBurn/SimpleServiceRegistry.git', :tag => s.version.to_s }
+  s.social_media_url = 'https://twitter.com/2000Bernier'
 
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'SimpleServiceRegistry/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'SimpleServiceRegistry' => ['SimpleServiceRegistry/Assets/*.png']
-  # }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
