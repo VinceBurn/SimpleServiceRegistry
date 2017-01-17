@@ -13,11 +13,15 @@ import ServiceRegistryDev
 protocol Identifiable {
     var id: Int { get }
 }
-protocol Characterable_haha {
-    var characters: String.CharacterView { get }
+protocol Stringable {
+    var string: String { get }
 }
 
-extension String : Characterable_haha {}
+extension String : Stringable {
+    var string: String {
+        return self
+    }
+}
 
 class ClassService : Equatable, Identifiable {
     let id: Int
@@ -59,16 +63,18 @@ class ServiceRegistry_test: XCTestCase {
     func test_givenRegister2Service_whenRetrival_thenCanGetBothService() {
         let service1 = "Hello"
         let service2 = ClassService(identifier: 4)
-        sut.register(service1, for: Characterable_haha.self)
+        sut.register(service1, for: Stringable.self)
         sut.register(service2, for: Identifiable.self)
         
-        let characterable = sut.service(for: Characterable_haha.self) as? String
-        let identifiable = sut.service(for: Identifiable.self) as? ClassService
+        let characterable = sut.service(for: Stringable.self)
+        let identifiable = sut.service(for: Identifiable.self)
         
         XCTAssertNotNil(characterable)
         XCTAssertNotNil(identifiable)
-        XCTAssertEqual(characterable!, service1)
-        XCTAssertEqual(identifiable!, service2)
+        XCTAssertEqual(characterable!.string, service1)
+        XCTAssertEqual(identifiable!.id, service2.id)
+        XCTAssertEqual(characterable as! String, service1)
+        XCTAssertTrue(identifiable as! ClassService === service2)
     }
     
 }
