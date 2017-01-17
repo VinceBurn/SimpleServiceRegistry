@@ -22,9 +22,11 @@ extension ServiceRegistry {
     
     /// Registration base on a type.
     ///
-    /// It would be best practices that the conforming Type would be a protocol implemented by the service. Calling this method multiple time with the same Type override the previously regsitered instance.
+    /// It would be best practices that the conforming Type would be a protocol implemented by the service.
     ///
-    /// - Important: Registration enforce that the service implement the Type in order for the retrival process to be able to cast the return to the registered Type.
+    /// - Important: 
+    ///     * Registration enforce that the service implement the Type in order for the retrival process to be able to cast the return to the registered Type.
+    ///     * Calling this method multiple time with the same Type override the previously regsitered instance.
     ///
     /// - Parameter service: any thing that implement the type parameter
     /// - Parameter type: A type that 'service' need to conforms to
