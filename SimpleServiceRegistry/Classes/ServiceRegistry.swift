@@ -23,6 +23,7 @@ extension ServiceRegistry {
     /// Registration base on a type.
     ///
     /// It would be best practices that the conforming Type would be a protocol implemented by the service. Calling this method multiple time with the same Type override the previously regsitered instance.
+    ///
     /// - Important: Registration enforce that the service implement the Type in order for the retrival process to be able to cast the return to the registered Type.
     ///
     /// - Parameter service: any thing that implement the type parameter
@@ -32,7 +33,7 @@ extension ServiceRegistry {
         services[id] = service
     }
     
-    /// Retriving a previously registred services and returns it cast to Type
+    /// Retriving a previously registred services and returns it optionally casted Type
     ///
     /// - Parameter type: The type of the registered service
     /// - Returns: the previously registered services for Type or 'nil' if nothing was registered for Type.
@@ -41,8 +42,14 @@ extension ServiceRegistry {
         return services[id] as? T
     }
     
+    /// Retriving a previously registred services and returns it casted Type.
+    ///
+    /// - Parameter type: Tye type of the registered service
+    /// - Returns: the previously registered service for Type or **CRASH** if nothing was registered for Type.
+    /// - seealso: service<T>(for type: T) -> T?
     public func serviceUnwrapped<T>(for type: T.Type) -> T {
         return service(for: type)!
     }
 }
+
 
