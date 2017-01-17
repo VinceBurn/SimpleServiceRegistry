@@ -11,5 +11,9 @@ import Foundation
 public class ServiceRegistry {
     public init() {}
     
+    public func safeService() -> Int? {
+        return nil
+    }
+    
 }
 

@@ -22,9 +22,19 @@ class ServiceRegistry_test: XCTestCase {
         super.tearDown()
     }
     
-    //MARK:- 
+    //MARK:-
     func test_canInstantiate() {
         _ = ServiceRegistry()
     }
+    
+    //MARK:- Retrival
+    func test_givenNewInstance_whenSafeRetrival_thenNil() {
+        let sut = ServiceRegistry()
+        let result = sut.safeService()
+        
+        print(String(describing: type(of:result)))
+        XCTAssertNil(result)
+    }
+    
     
 }
