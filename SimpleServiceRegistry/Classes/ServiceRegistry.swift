@@ -11,11 +11,14 @@ import Foundation
 /// Goal: Store all services instance in a single place where they can be retreived in a loosely coupled way.
 public class ServiceRegistry {
     
-    private var services = [String: Any]()
+    fileprivate var services = [String: Any]()
     
     /// Init
     public init() {}
-    
+}
+
+//MARK:- Registration and Retrival
+extension ServiceRegistry {
     /// Registration base on a type.
     ///
     /// It would be best practices that the conforming Type would be a protocol implemented by the service. Calling this method multiple time with the same Type override the previously regsitered instance.
@@ -36,6 +39,5 @@ public class ServiceRegistry {
         let id = String(describing: type)
         return services[id] as? T
     }
-    
 }
 
