@@ -77,4 +77,19 @@ class ServiceRegistry_test: XCTestCase {
         XCTAssertTrue(identifiable as! ClassService === service2)
     }
     
+    func test_givenRegister2Service_whenUnWrapRetrival_thenCanGetBothService() {
+        let service1 = "Hello"
+        let service2 = ClassService(identifier: 4)
+        sut.register(service1, for: Stringable.self)
+        sut.register(service2, for: Identifiable.self)
+        
+        let characterable = sut.serviceUnwrapped(for: Stringable.self)
+        let identifiable = sut.serviceUnwrapped(for: Identifiable.self)
+        
+        XCTAssertEqual(characterable.string, service1)
+        XCTAssertEqual(identifiable.id, service2.id)
+        XCTAssertEqual(characterable as! String, service1)
+        XCTAssertTrue(identifiable as! ClassService === service2)
+    }
+    
 }

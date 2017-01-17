@@ -19,6 +19,7 @@ public class ServiceRegistry {
 
 //MARK:- Registration and Retrival
 extension ServiceRegistry {
+    
     /// Registration base on a type.
     ///
     /// It would be best practices that the conforming Type would be a protocol implemented by the service. Calling this method multiple time with the same Type override the previously regsitered instance.
@@ -38,6 +39,10 @@ extension ServiceRegistry {
     public func service<T>(for type: T.Type) -> T? {
         let id = String(describing: type)
         return services[id] as? T
+    }
+    
+    public func serviceUnwrapped<T>(for type: T.Type) -> T {
+        return service(for: type)!
     }
 }
 
