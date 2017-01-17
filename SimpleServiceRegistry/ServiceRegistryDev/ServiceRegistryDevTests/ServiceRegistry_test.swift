@@ -10,6 +10,7 @@ import XCTest
 //  don't use @testable, we want to test the public API only
 import ServiceRegistryDev
 
+//MARK:- Mock and Stubs
 protocol Identifiable {
     var id: Int { get }
 }
@@ -35,11 +36,13 @@ class ClassService : Equatable, Identifiable {
     }
 }
 
+//MARK:- Tests
 class ServiceRegistry_test: XCTestCase {
-    
     let sut = ServiceRegistry()
-    
-    //MARK:- Registering & Retrival
+}
+
+//MARK:- Registering & Retrival
+extension ServiceRegistry_test {
     func test_givenNoRegistration_whenRetrival_thenOptionalOfTheRightType() {
         let optStr: String? = nil
         let result = sut.service(for: String.self)
@@ -91,5 +94,4 @@ class ServiceRegistry_test: XCTestCase {
         XCTAssertEqual(characterable as! String, service1)
         XCTAssertTrue(identifiable as! ClassService === service2)
     }
-    
 }
