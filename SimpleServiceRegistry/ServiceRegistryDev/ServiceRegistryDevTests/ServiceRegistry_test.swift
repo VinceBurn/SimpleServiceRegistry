@@ -36,9 +36,9 @@ class ServiceRegistry_test: XCTestCase {
     let sut = ServiceRegistry()
     
     //MARK:- Registering & Retrival
-    func test_givenNoRegistration_whenSafeRetrival_thenOptionalOfTheRightType() {
+    func test_givenNoRegistration_whenRetrival_thenOptionalOfTheRightType() {
         let optStr: String? = nil
-        let result = sut.safeService(for: String.self)
+        let result = sut.service(for: String.self)
         XCTAssertEqual(String(describing: type(of:result)), String(describing: type(of:optStr)))
     }
     
@@ -47,23 +47,23 @@ class ServiceRegistry_test: XCTestCase {
         sut.register(service, for: String.self)
     }
     
-    func test_givenRegister1Service_whenSafeRetrival_thenService() {
+    func test_givenRegister1Service_whenRetrival_thenService() {
         let service = "Hello"
         sut.register(service, for: String.self)
-        let result = sut.safeService(for: String.self)
+        let result = sut.service(for: String.self)
         
         XCTAssertNotNil(result)
         XCTAssertEqual(result!, service)
     }
     
-    func test_givenRegister2Service_whenSafeRetrival_thenCanGetBothService() {
+    func test_givenRegister2Service_whenRetrival_thenCanGetBothService() {
         let service1 = "Hello"
         let service2 = ClassService(identifier: 4)
         sut.register(service1, for: Characterable_haha.self)
         sut.register(service2, for: Identifiable.self)
         
-        let characterable = sut.safeService(for: Characterable_haha.self) as? String
-        let identifiable = sut.safeService(for: Identifiable.self) as? ClassService
+        let characterable = sut.service(for: Characterable_haha.self) as? String
+        let identifiable = sut.service(for: Identifiable.self) as? ClassService
         
         XCTAssertNotNil(characterable)
         XCTAssertNotNil(identifiable)

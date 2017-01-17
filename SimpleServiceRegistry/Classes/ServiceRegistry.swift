@@ -19,7 +19,7 @@ public class ServiceRegistry {
         services[id] = service
     }
     
-    public func safeService<T>(for type:T.Type) -> T? {
+    public func service<T>(for type:T.Type) -> T? {
         let id = String(describing: type)
         return services[id] as? T
     }
