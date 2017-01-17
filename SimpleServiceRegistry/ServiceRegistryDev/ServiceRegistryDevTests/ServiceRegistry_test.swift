@@ -36,4 +36,11 @@ class ServiceRegistry_test: XCTestCase {
         XCTAssertEqual(String(describing: type(of:result)), String(describing: type(of:optStr)))
     }
     
+    func test_givenNewInstance_whenRegister_thenCompile() {
+        let sut = ServiceRegistry()
+        let service = "Hello"
+        
+        sut.register(service, for: String.self)
+    }
+    
 }
