@@ -10,6 +10,8 @@
 		61390FCF1E2DBD1D00CF29B1 /* ServiceRegistryDev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61390FC51E2DBD1C00CF29B1 /* ServiceRegistryDev.framework */; };
 		61390FD41E2DBD1D00CF29B1 /* ServiceRegistryDevTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61390FD31E2DBD1D00CF29B1 /* ServiceRegistryDevTests.swift */; };
 		61390FD61E2DBD1D00CF29B1 /* ServiceRegistryDev.h in Headers */ = {isa = PBXBuildFile; fileRef = 61390FC81E2DBD1C00CF29B1 /* ServiceRegistryDev.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		61390FE41E2DBE7E00CF29B1 /* ServiceRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61390FE31E2DBE7E00CF29B1 /* ServiceRegistry.swift */; };
+		61390FE61E2DBEA600CF29B1 /* ServiceRegistry_test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61390FE51E2DBEA600CF29B1 /* ServiceRegistry_test.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		61390FCE1E2DBD1D00CF29B1 /* ServiceRegistryDevTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ServiceRegistryDevTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		61390FD31E2DBD1D00CF29B1 /* ServiceRegistryDevTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRegistryDevTests.swift; sourceTree = "<group>"; };
 		61390FD51E2DBD1D00CF29B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		61390FE31E2DBE7E00CF29B1 /* ServiceRegistry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceRegistry.swift; path = ../../Classes/ServiceRegistry.swift; sourceTree = "<group>"; };
+		61390FE51E2DBEA600CF29B1 /* ServiceRegistry_test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceRegistry_test.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,7 @@
 		61390FC71E2DBD1C00CF29B1 /* ServiceRegistryDev */ = {
 			isa = PBXGroup;
 			children = (
+				61390FE21E2DBE6100CF29B1 /* Classes in Dev */,
 				61390FC81E2DBD1C00CF29B1 /* ServiceRegistryDev.h */,
 				61390FC91E2DBD1C00CF29B1 /* Info.plist */,
 			);
@@ -80,10 +85,19 @@
 		61390FD21E2DBD1D00CF29B1 /* ServiceRegistryDevTests */ = {
 			isa = PBXGroup;
 			children = (
-				61390FD31E2DBD1D00CF29B1 /* ServiceRegistryDevTests.swift */,
 				61390FD51E2DBD1D00CF29B1 /* Info.plist */,
+				61390FE51E2DBEA600CF29B1 /* ServiceRegistry_test.swift */,
+				61390FD31E2DBD1D00CF29B1 /* ServiceRegistryDevTests.swift */,
 			);
 			path = ServiceRegistryDevTests;
+			sourceTree = "<group>";
+		};
+		61390FE21E2DBE6100CF29B1 /* Classes in Dev */ = {
+			isa = PBXGroup;
+			children = (
+				61390FE31E2DBE7E00CF29B1 /* ServiceRegistry.swift */,
+			);
+			name = "Classes in Dev";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +162,7 @@
 				TargetAttributes = {
 					61390FC41E2DBD1C00CF29B1 = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					61390FCD1E2DBD1D00CF29B1 = {
@@ -196,6 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61390FE41E2DBE7E00CF29B1 /* ServiceRegistry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61390FE61E2DBEA600CF29B1 /* ServiceRegistry_test.swift in Sources */,
 				61390FD41E2DBD1D00CF29B1 /* ServiceRegistryDevTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,6 +338,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -333,6 +351,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.VincentBernier.ServiceRegistryDev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -341,6 +360,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -360,6 +380,7 @@
 		61390FDD1E2DBD1D00CF29B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = ServiceRegistryDevTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.VincentBernier.ServiceRegistryDevTests;
@@ -371,6 +392,7 @@
 		61390FDE1E2DBD1D00CF29B1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = ServiceRegistryDevTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.VincentBernier.ServiceRegistryDevTests;
