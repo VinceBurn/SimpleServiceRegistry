@@ -9,14 +9,17 @@
 import Foundation
 
 public class ServiceRegistry {
+    
+    private var service: Any?
+    
     public init() {}
     
     public func register<T>(_ service:Any, for type:T.Type) {
-        
+        self.service = service
     }
     
     public func safeService<T>(for type:T.Type) -> T? {
-        return nil
+        return service as? T
     }
     
 }

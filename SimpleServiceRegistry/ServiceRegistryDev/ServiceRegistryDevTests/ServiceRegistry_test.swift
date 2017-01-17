@@ -17,13 +17,22 @@ class ServiceRegistry_test: XCTestCase {
     //MARK:- Registering & Retrival
     func test_givenNoRegistration_whenSafeRetrival_thenOptionalOfTheRightType() {
         let optStr: String? = nil
-        let result = sut.safeService(for: String.self)        
+        let result = sut.safeService(for: String.self)
         XCTAssertEqual(String(describing: type(of:result)), String(describing: type(of:optStr)))
     }
     
     func test_givenNewInstance_whenRegister_thenCompile() {
         let service = "Hello"
         sut.register(service, for: String.self)
+    }
+    
+    func test_givenRegister1Service_whenSafeRetrival_thenService() {
+        let service = "Hello"
+        sut.register(service, for: String.self)
+        let result = sut.safeService(for: String.self)
+        
+        XCTAssertNotNil(result)
+        XCTAssertEqual(result!, service)
     }
     
 }
