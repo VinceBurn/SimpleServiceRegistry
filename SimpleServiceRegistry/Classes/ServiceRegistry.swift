@@ -14,7 +14,7 @@ public class ServiceRegistry {
     
     public init() {}
     
-    public func register<T>(_ service:Any, for type:T.Type) {
+    public func register<T>(_ service: T, for type: T.Type) {
         let id = String(describing: type)
         services[id] = service
     }
