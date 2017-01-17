@@ -7,6 +7,7 @@
 //
 
 import XCTest
+//  don't use @testable, we want to test the public API only
 import ServiceRegistryDev
 
 class ServiceRegistry_test: XCTestCase {
