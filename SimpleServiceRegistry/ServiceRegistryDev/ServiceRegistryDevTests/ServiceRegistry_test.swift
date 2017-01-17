@@ -94,4 +94,15 @@ extension ServiceRegistry_test {
         XCTAssertEqual(characterable as! String, service1)
         XCTAssertTrue(identifiable as! ClassService === service2)
     }
+    
+    func test_givenRegister1Service_whenRegisteringSameService_thenOverride() {
+        let service1 = "Hello"
+        let service2 = "My Override"
+        
+        sut.register(service1, for: Stringable.self)
+        sut.register(service2, for: Stringable.self)
+        
+        let result = sut.serviceUnwrapped(for: Stringable.self)
+        XCTAssertEqual(result.string, service2)
+    }
 }
