@@ -9,7 +9,10 @@
 import Foundation
 
 /// Goal: Store all services instance in a single place where they can be retreived in a loosely coupled way.
-public class ServiceRegistry {
+/// - Experiment: The class is open to allow subclassing. Idea for subclasses:
+///     * Add notification when services are registered or unregistered
+///     * Add a shared instance, making the class the only singleton needed in your app
+open class ServiceRegistry {
     
     fileprivate var services = [String: Any]()
     
@@ -30,7 +33,7 @@ extension ServiceRegistry {
     ///
     /// - Parameter service: any thing that implement the type parameter
     /// - Parameter type: A type that 'service' need to conforms to
-    public func register<T>(_ service: T, for type: T.Type) {
+    open func register<T>(_ service: T, for type: T.Type) {
         let id = String(describing: type)
         services[id] = service
     }
@@ -39,7 +42,7 @@ extension ServiceRegistry {
     ///
     /// - Parameter type: The type of the registered service
     /// - Returns: the previously registered services for Type or 'nil' if nothing was registered for Type.
-    public func service<T>(for type: T.Type) -> T? {
+    open func service<T>(for type: T.Type) -> T? {
         let id = String(describing: type)
         return services[id] as? T
     }
@@ -63,14 +66,14 @@ extension ServiceRegistry {
 extension ServiceRegistry {
     
     /// Will remove all registered services from the registry
-    public func unregisterAll() {
+    open func unregisterAll() {
         services.removeAll()
     }
     
     /// Will remove the specified services from the registry
     ///
     /// - Parameter type: of the service to remove from the registry
-    public func unregisterService<T>(for type:T.Type) {
+    open func unregisterService<T>(for type:T.Type) {
         let id = String(describing: type)
         services.removeValue(forKey: id)
     }
