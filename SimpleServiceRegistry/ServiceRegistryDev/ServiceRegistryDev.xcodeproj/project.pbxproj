@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		61390FCF1E2DBD1D00CF29B1 /* ServiceRegistryDev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61390FC51E2DBD1C00CF29B1 /* ServiceRegistryDev.framework */; };
-		61390FD41E2DBD1D00CF29B1 /* ServiceRegistryDevTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61390FD31E2DBD1D00CF29B1 /* ServiceRegistryDevTests.swift */; };
 		61390FD61E2DBD1D00CF29B1 /* ServiceRegistryDev.h in Headers */ = {isa = PBXBuildFile; fileRef = 61390FC81E2DBD1C00CF29B1 /* ServiceRegistryDev.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		61390FE41E2DBE7E00CF29B1 /* ServiceRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61390FE31E2DBE7E00CF29B1 /* ServiceRegistry.swift */; };
 		61390FE61E2DBEA600CF29B1 /* ServiceRegistry_test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61390FE51E2DBEA600CF29B1 /* ServiceRegistry_test.swift */; };
@@ -29,7 +28,6 @@
 		61390FC81E2DBD1C00CF29B1 /* ServiceRegistryDev.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServiceRegistryDev.h; sourceTree = "<group>"; };
 		61390FC91E2DBD1C00CF29B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61390FCE1E2DBD1D00CF29B1 /* ServiceRegistryDevTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ServiceRegistryDevTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		61390FD31E2DBD1D00CF29B1 /* ServiceRegistryDevTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRegistryDevTests.swift; sourceTree = "<group>"; };
 		61390FD51E2DBD1D00CF29B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61390FE31E2DBE7E00CF29B1 /* ServiceRegistry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceRegistry.swift; path = ../../Classes/ServiceRegistry.swift; sourceTree = "<group>"; };
 		61390FE51E2DBEA600CF29B1 /* ServiceRegistry_test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceRegistry_test.swift; sourceTree = "<group>"; };
@@ -87,7 +85,6 @@
 			children = (
 				61390FD51E2DBD1D00CF29B1 /* Info.plist */,
 				61390FE51E2DBEA600CF29B1 /* ServiceRegistry_test.swift */,
-				61390FD31E2DBD1D00CF29B1 /* ServiceRegistryDevTests.swift */,
 			);
 			path = ServiceRegistryDevTests;
 			sourceTree = "<group>";
@@ -220,7 +217,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				61390FE61E2DBEA600CF29B1 /* ServiceRegistry_test.swift in Sources */,
-				61390FD41E2DBD1D00CF29B1 /* ServiceRegistryDevTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
