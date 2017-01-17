@@ -8,27 +8,30 @@
 
 import Foundation
 
-/** Goal: Store all services instance in a single place where they can be retreived in a loosely coupled way.
- */
+/// Goal: Store all services instance in a single place where they can be retreived in a loosely coupled way.
 public class ServiceRegistry {
     
     private var services = [String: Any]()
     
-    /** Init */
+    /// Init
     public init() {}
     
-    /** Registration base on a type.
-     :discussion: It would be best practices that the conforming Type would be a protocol implemented by the service. Calling this method multiple time with the same Type override the previously regsitered instance.
-     :note: Registration enforce that the service implement the Type in order for the retrival process to be able to cast the return to the registered Type.
-     */
+    /// Registration base on a type.
+    ///
+    /// It would be best practices that the conforming Type would be a protocol implemented by the service. Calling this method multiple time with the same Type override the previously regsitered instance.
+    /// - Important: Registration enforce that the service implement the Type in order for the retrival process to be able to cast the return to the registered Type.
+    ///
+    /// - Parameter service: any thing that implement the type parameter
+    /// - Parameter type: A type that 'service' need to conforms to
     public func register<T>(_ service: T, for type: T.Type) {
         let id = String(describing: type)
         services[id] = service
     }
     
-    /** Retriving a previously registred services and returns it cast to Type
-     :return: Return the previously registered services for Type or 'nil' if nothing was registered for Type.
-     */
+    /// Retriving a previously registred services and returns it cast to Type
+    ///
+    /// - Parameter type: The type of the registered service
+    /// - Returns: the previously registered services for Type or 'nil' if nothing was registered for Type.
     public func service<T>(for type: T.Type) -> T? {
         let id = String(describing: type)
         return services[id] as? T
