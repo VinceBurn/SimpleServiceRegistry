@@ -54,7 +54,7 @@ extension ServiceRegistry {
     }
     
     /// A set of all registered type as returned by String(describing: type). Usefull for debug and discovery.
-    public var allTypes: Set<String> {
+    public var types: Set<String> {
         return Set(services.keys)
     }
 }
