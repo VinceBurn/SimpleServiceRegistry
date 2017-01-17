@@ -11,7 +11,7 @@ import Foundation
 public class ServiceRegistry {
     public init() {}
     
-    public func safeService() -> Int? {
+    public func safeService<T>(for type:T.Type) -> T? {
         return nil
     }
     
