@@ -105,4 +105,23 @@ extension ServiceRegistry_test {
         let result = sut.serviceUnwrapped(for: Stringable.self)
         XCTAssertEqual(result.string, service2)
     }
+    
+    func test_givenNoRegistration_whenAllTypes_thenEmptyStringArray() {
+        let control = Set<String>()
+        let result = sut.allTypes
+        XCTAssertEqual(result, control)
+    }
+    
+    func test_givenRegister2Service_whenAllTypes_thenStringRepresentationOf2Services() {
+        let service1 = "Hello"
+        let service2 = ClassService(identifier: 4)
+        sut.register(service1, for: Stringable.self)
+        sut.register(service2, for: Identifiable.self)
+        let control = Set<String>(["Stringable", "Identifiable"])
+        
+        let result = sut.allTypes
+        
+        XCTAssertEqual(result.count, 2)
+        XCTAssertEqual(result, control)
+    }
 }
