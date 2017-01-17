@@ -148,4 +148,20 @@ extension ServiceRegistry_test {
         XCTAssertNil(stringableService)
     }
     
+    func test_givenRegistration2Service_whenUnregister1_then1ServiceRemains() {
+        let classService = ClassService(identifier: 4)
+        sut.register(classService, for: ClassService.self)
+        sut.register("Hello", for: Stringable.self)
+        
+        sut.unregisterService(for: Stringable.self)
+        
+        XCTAssertEqual(sut.types, ["ClassService"])
+        XCTAssertNil(sut.service(for: Stringable.self))
+        XCTAssertNotNil(sut.service(for: ClassService.self))
+    }
+    
+    func test_givenNoRegistration_whenUnregisterForType_thenNoTypes() {
+        sut.unregisterService(for: String.self)
+        XCTAssertEqual(sut.types, Set<String>())
+    }
 }

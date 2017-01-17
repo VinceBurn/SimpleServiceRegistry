@@ -66,5 +66,13 @@ extension ServiceRegistry {
     public func unregisterAll() {
         services.removeAll()
     }
+    
+    /// Will remove the specified services from the registry
+    ///
+    /// - Parameter type: of the service to remove from the registry
+    public func unregisterService<T>(for type:T.Type) {
+        let id = String(describing: type)
+        services.removeValue(forKey: id)
+    }
 }
 
