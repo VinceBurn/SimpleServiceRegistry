@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import ServiceRegistryDev
 
 class ServiceRegistry_test: XCTestCase {
     
@@ -20,7 +21,9 @@ class ServiceRegistry_test: XCTestCase {
         super.tearDown()
     }
     
-    
+    func test_myTest() {
+        XCTAssertTrue(true)
+    }
     
     
 }
