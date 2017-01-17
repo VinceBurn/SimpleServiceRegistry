@@ -22,9 +22,9 @@ class ServiceRegistry_test: XCTestCase {
         super.tearDown()
     }
     
-    func test_myTest() {
-        XCTAssertTrue(true)
+    //MARK:- 
+    func test_canInstantiate() {
+        _ = ServiceRegistry()
     }
-    
     
 }
