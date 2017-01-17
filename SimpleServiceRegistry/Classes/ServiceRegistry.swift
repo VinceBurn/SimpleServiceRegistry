@@ -59,4 +59,12 @@ extension ServiceRegistry {
     }
 }
 
+//MARK:- Unregister
+extension ServiceRegistry {
+    
+    /// Will remove all registered services from the registry
+    public func unregisterAll() {
+        services.removeAll()
+    }
+}
 

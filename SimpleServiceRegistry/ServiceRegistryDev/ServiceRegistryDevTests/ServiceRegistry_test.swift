@@ -125,3 +125,27 @@ extension ServiceRegistry_test {
         XCTAssertEqual(result, control)
     }
 }
+
+//MARK:- Unregister
+extension ServiceRegistry_test {
+    func test_givenNoRegistration_whenUnRegisterAll_thenNoTypes() {
+        sut.unregisterAll()
+        let result = sut.types
+        XCTAssertEqual(result, Set<String>())
+    }
+    
+    func test_givenRegistration2Service_whenUnregisterAll_thenNoTypesNorInstance() {
+        sut.register("Stringable", for: Stringable.self)
+        sut.register("String", for: String.self)
+        
+        sut.unregisterAll()
+        let result = sut.types
+        let stringService = sut.service(for:String.self)
+        let stringableService = sut.service(for:Stringable.self)
+        
+        XCTAssertEqual(result, Set<String>())
+        XCTAssertNil(stringService)
+        XCTAssertNil(stringableService)
+    }
+    
+}
