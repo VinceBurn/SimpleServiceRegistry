@@ -8,14 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SimpleServiceRegistry'
-  s.version          = '3.0.2'
-  s.summary          = 'Simple Service Registry to facilitate Dependency Injection by removing the need for Singleton'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
+  s.version          = '0.8.0'
+  s.summary          = 'Simple Service Registry to facilitate Dependency Injection by removing the need for Singleton (Swift 3.0.2)'
 
   s.description      = <<-DESC
 Use the Service Registry to store services instance using a type as theire key. Using a Protocol as the key to retreive an instance would be the best option.
@@ -28,6 +22,7 @@ Use the Service Registry to store services instance using a type as theire key. 
   s.social_media_url = 'https://twitter.com/2000Bernier'
 
   s.ios.deployment_target = '8.0'
+#  s.osx.deployment_target = '10.10'
 
   s.source_files = 'SimpleServiceRegistry/Classes/**/*'
 

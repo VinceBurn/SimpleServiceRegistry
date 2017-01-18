@@ -1,5 +1,5 @@
 PODS:
-  - SimpleServiceRegistry (0.1.0)
+  - SimpleServiceRegistry (3.0.2)
 
 DEPENDENCIES:
   - SimpleServiceRegistry (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  SimpleServiceRegistry: 61cce4c0f6e5322f79a3b60e39433edd5c44edca
+  SimpleServiceRegistry: bd72ac27fd5af1ff3cd9340496830584af53c85e
 
 PODFILE CHECKSUM: 35a7a559db2dc3a8d614ee410941a354b7a66efd
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.0.rc.1

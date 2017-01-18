@@ -1,6 +1,6 @@
 # SimpleServiceRegistry
 
-[![CI Status](http://img.shields.io/travis/Vincent Bernier/SimpleServiceRegistry.svg?style=flat)](https://travis-ci.org/Vincent Bernier/SimpleServiceRegistry)
+#[![CI Status](http://img.shields.io/travis/Vincent Bernier/SimpleServiceRegistry.svg?style=flat)](https://travis-ci.org/Vincent Bernier/SimpleServiceRegistry)
 [![Version](https://img.shields.io/cocoapods/v/SimpleServiceRegistry.svg?style=flat)](http://cocoapods.org/pods/SimpleServiceRegistry)
 [![License](https://img.shields.io/cocoapods/l/SimpleServiceRegistry.svg?style=flat)](http://cocoapods.org/pods/SimpleServiceRegistry)
 [![Platform](https://img.shields.io/cocoapods/p/SimpleServiceRegistry.svg?style=flat)](http://cocoapods.org/pods/SimpleServiceRegistry)
