@@ -17,16 +17,16 @@ protocol SizingRules {
 
 struct SizingRules_iPhone : SizingRules {
     
-    let screenLeftPadding: CGFloat = 10.0
-    let screenRightPadding: CGFloat = 10.0
+    let screenLeftPadding: CGFloat = 30.0
+    let screenRightPadding: CGFloat = 30.0
     
-    let titleTextSize: CGFloat = 16.0
+    let titleTextSize: CGFloat = 14.0
 }
 
 struct SizingRules_iPad : SizingRules {
     
-    let screenLeftPadding: CGFloat = 40.0
-    let screenRightPadding: CGFloat = 40.0
+    let screenLeftPadding: CGFloat = 120.0
+    let screenRightPadding: CGFloat = 120.0
     
-    let titleTextSize: CGFloat = 22.0
+    let titleTextSize: CGFloat = 42.0
 }
