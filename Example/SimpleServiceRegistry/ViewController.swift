@@ -14,12 +14,19 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //  Using a service store in the Service Registry
+        //  We are using our subclass of ServiceRegistry that was adding the *sharedInstance* property
+        let sizingRules = ServiceRegistry.sharedInstance.serviceUnwrapped(for: SizingRules.self)
+        titleLabel.font = UIFont.systemFont(ofSize: sizingRules.titleTextSize)
         titleLabel.backgroundColor = UIColor.orange
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
+        //  Using a service store in the Service Registry
+        //  We are using our subclass of ServiceRegistry that was adding the *sharedInstance* property
         let sizingRules = ServiceRegistry.sharedInstance.serviceUnwrapped(for: SizingRules.self)
         view.layoutMargins = UIEdgeInsets(top: view.layoutMargins.top,
                                           left: sizingRules.screenLeftPadding,

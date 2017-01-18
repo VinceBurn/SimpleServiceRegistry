@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     override init() {
         super.init()
         
+        // Creating different service for different scenario
         let sizingRules: SizingRules
         switch UIDevice.current.userInterfaceIdiom {
         case .phone:
@@ -26,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             fatalError("Only userInterfaceIdiom phone and pad are supported.")
         }
         
+        //  Registering the Service
         let serviceRegistry = ServiceRegistry.sharedInstance
         serviceRegistry.register(sizingRules, for: SizingRules.self)
     }
