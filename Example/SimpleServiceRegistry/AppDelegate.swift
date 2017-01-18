@@ -12,7 +12,24 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    override init() {
+        super.init()
+        
+        let sizingRules: SizingRules
+        switch UIDevice.current.userInterfaceIdiom {
+        case .phone:
+            sizingRules = SizingRules_iPhone()
+        case .pad:
+            sizingRules = SizingRules_iPad()
+        default:
+            fatalError("Only userInterfaceIdiom phone and pad are supported.")
+        }
+        
+        let serviceRegistry = ServiceRegistry.sharedInstance
+        serviceRegistry.register(sizingRules, for: SizingRules.self)
+    }
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
