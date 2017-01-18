@@ -22,6 +22,7 @@ Use the Service Registry to store services instance using a type as theire key. 
   s.social_media_url = 'https://twitter.com/2000Bernier'
 
   s.ios.deployment_target = '8.0'
+#  s.osx.deployment_target = '10.10'
 
   s.source_files = 'SimpleServiceRegistry/Classes/**/*'
 
