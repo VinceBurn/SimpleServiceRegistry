@@ -10,15 +10,29 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var titleLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        //  Using a service store in the Service Registry
+        //  We are using our subclass of ServiceRegistry that was adding the *sharedInstance* property
+        let sizingRules = ServiceRegistry.sharedInstance.serviceUnwrapped(for: SizingRules.self)
+        titleLabel.font = UIFont.systemFont(ofSize: sizingRules.titleTextSize)
+        titleLabel.backgroundColor = UIColor.orange
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        //  Using a service store in the Service Registry
+        //  We are using our subclass of ServiceRegistry that was adding the *sharedInstance* property
+        let sizingRules = ServiceRegistry.sharedInstance.serviceUnwrapped(for: SizingRules.self)
+        view.layoutMargins = UIEdgeInsets(top: view.layoutMargins.top,
+                                          left: sizingRules.screenLeftPadding,
+                                          bottom: view.layoutMargins.bottom,
+                                          right: sizingRules.screenRightPadding)
     }
-
+    
 }
 
