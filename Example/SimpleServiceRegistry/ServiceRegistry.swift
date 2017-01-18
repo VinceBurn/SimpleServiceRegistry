@@ -10,6 +10,7 @@ import Foundation
 import SimpleServiceRegistry
 
 /// Building a Subclass to make this the only Singleton of the application
+/// If needed we could add Notification on key registry method
 class ServiceRegistry : SimpleServiceRegistry.ServiceRegistry {
     
     /// Singleton
