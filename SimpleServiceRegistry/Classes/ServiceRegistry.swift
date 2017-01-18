@@ -49,6 +49,7 @@ extension ServiceRegistry {
     
     /// Retriving a previously registred services and returns it casted Type.
     ///
+    /// - Note: This method call 'service<T>(for type:) -> T?' and force unwrap the result.
     /// - Parameter type: Tye type of the registered service
     /// - Returns: the previously registered service for Type or **CRASH** if nothing was registered for Type.
     /// - seealso: service<T>(for type: T) -> T?
