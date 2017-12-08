@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SimpleServiceRegistry'
-  s.version          = '0.8.0'
-  s.summary          = 'Simple Service Registry to facilitate Dependency Injection by removing the need for Singleton (Swift 3.0.2)'
+  s.version          = '1.0.0'
+  s.summary          = 'Simple Service Registry to facilitate Dependency Injection by removing the need for Singleton (Swift 4)'
 
   s.description      = <<-DESC
 Use the Service Registry to store services instance using a type as theire key. Using a Protocol as the key to retreive an instance would be the best option.
