@@ -9,7 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    private let serviceRegistry = ServiceRegistry.sharedInstance
     @IBOutlet weak var titleLabel: UILabel!
     
     override func viewDidLoad() {
@@ -17,7 +18,7 @@ class ViewController: UIViewController {
         
         //  Using a service store in the Service Registry
         //  We are using our subclass of ServiceRegistry that was adding the *sharedInstance* property
-        let sizingRules = ServiceRegistry.sharedInstance.serviceUnwrapped(for: SizingRules.self)
+        let sizingRules = serviceRegistry.serviceUnwrapped(for: SizingRules.self)
         titleLabel.font = UIFont.systemFont(ofSize: sizingRules.titleTextSize)
         titleLabel.backgroundColor = UIColor.orange
     }
@@ -27,7 +28,7 @@ class ViewController: UIViewController {
         
         //  Using a service store in the Service Registry
         //  We are using our subclass of ServiceRegistry that was adding the *sharedInstance* property
-        let sizingRules = ServiceRegistry.sharedInstance.serviceUnwrapped(for: SizingRules.self)
+        let sizingRules = serviceRegistry.serviceUnwrapped(for: SizingRules.self)
         view.layoutMargins = UIEdgeInsets(top: view.layoutMargins.top,
                                           left: sizingRules.screenLeftPadding,
                                           bottom: view.layoutMargins.bottom,
